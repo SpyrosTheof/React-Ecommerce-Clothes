@@ -1,6 +1,6 @@
 import React from 'react';
 import CollectionItem from '../Collection-Item/collection-item';
-import './preview-collection.scss'
+import './preview-collection.scss';
 
  
  const PreviewCollection=({title,items})=>(
@@ -17,7 +17,7 @@ import './preview-collection.scss'
                     .map(({ id, ...otherItemProps }) => (
                       <CollectionItem key={id} {...otherItemProps} />
                     ))}
-                }
+                
                </div>   
            </div>
        
