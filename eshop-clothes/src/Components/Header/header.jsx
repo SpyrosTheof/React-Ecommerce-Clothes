@@ -5,7 +5,7 @@ import {ReactComponent as Logo} from '../../Assets/original.svg'
 import { auth } from '../../Firebase/firebase';
 import {connect} from 'react-redux'
 
-const Header=({user})=>(
+const Header=({currentUser})=>(
     <div className='header'>
         <Link className="logo-container" to='/'>
             <Logo className="logo" />
@@ -20,7 +20,7 @@ const Header=({user})=>(
                 CONTACT
             </Link>
             {
-                user?
+                currentUser?
                 <div>
                 <div className="option" onClick={()=>auth.signOut()}>SIGN OUT</div>
 
@@ -33,7 +33,7 @@ const Header=({user})=>(
 )
 
 const mapStateToProps=(state)=>({
-    user:state.user.currentUser
+    currentUser:state.user.currentUser
 })
 
 export default connect(mapStateToProps)(Header);
